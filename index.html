@@ -14,7 +14,6 @@
         body {
             color: white;
             background-color: black;
-            
         }
         main {
             display: flex;
@@ -25,27 +24,97 @@
         }
         div {
             display: flex;
-            justify-content: space-around;
+            justify-content: space-between;
             flex-direction: column;
             align-items: center;
             padding: 1.5rem;
             border: 2px solid white;
             width: 50rem;
-            height: 25rem;
+            height: auto;
+        }
+        h1, p, button {
+            margin: 1.5rem;
         }
         button {
             border: transparent;
-            background-color: rgb(229, 195, 0);
+            /* background-color: rgb(229, 195, 0); */
+            background: linear-gradient(to bottom, rgb(255, 217, 0), rgba(210, 180, 8, 0.9));
             border-radius: 1.5px;
             font-weight: bolder;
             cursor: pointer;
-            width: 40%;
-            height: 2rem;
+            width: 150px;
+            height: 32px;
         }
         button:hover {
             filter: brightness(0.9);
             transform: scale(1.1);
             color: white;
+        }
+        em {
+            color: red;
+        }
+        @media screen and (max-width: 830px) {
+            div {
+            padding: 1.2rem;
+            width: 40rem;
+        }
+        h1, p, button {
+            margin: 1.2rem;
+        }
+        h1 {
+            font-size: 1.7rem;
+        }
+        button {
+            width: 130px;
+            height: 28px;
+        }
+        }
+        @media screen and (max-width: 700px) {
+            div {
+            padding: 1rem;
+            width: 30rem;
+            font-size: 1rem;
+        }
+        h1, p, button {
+            margin: 1rem;
+        }
+        button {
+            font-size: .7rem;
+        }
+        h1 {
+            font-size: 1.4rem;
+        }
+        }
+        @media screen and (max-width: 510px) {
+            div {
+            padding: .5rem;
+            width: 100%;
+            font-size: .9rem;
+        }
+        h1, p, button {
+            margin: .5rem;
+        }
+        button {
+            width: 120px;
+            height: 24px;
+        }
+        h1 {
+            font-size: 1.2rem;
+        }
+        main {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+        }
+        @media screen and (max-width: 410px) {
+        button {
+            width: 110px;
+            height: 20px;
+        }
+        h1 {
+            font-size: 1rem;
+        }
         }
     </style>
     
@@ -105,14 +174,14 @@
 
         start.addEventListener('click', (e) =>{
             e.preventDefault()
-            mission.innerText = 
-            `“Um(a) ${gerate(sujeito)} ${gerate(acao)} em um(a) 
-            ${gerate(local)}. Durante a investigação, o 
-            grupo terá a ajuda de um(a) ${gerate(aliado)} e 
-            poderá encontrar ${gerate(objeto)}. Porém, em 
+            mission.innerHTML = 
+            `“Um(a) <em>${gerate(sujeito)}</em> <em>${gerate(acao)}</em> em um(a) 
+            <em>${gerate(local)}</em>. Durante a investigação, o 
+            grupo terá a ajuda de um(a) <em>${gerate(aliado)}</em> e 
+            poderá encontrar <em>${gerate(objeto)}</em>. Porém, em 
             determinado momento os agentes serão 
-            surpreendidos por ${gerate(evento)}.
-            ELEMENTO: ${gerate(elemento)}”`
+            surpreendidos por <em>${gerate(evento)}</em>.
+            ELEMENTO: <em>${gerate(elemento)}</em>”`
         })
         
     </script>
